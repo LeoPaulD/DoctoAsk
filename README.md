@@ -1,5 +1,7 @@
 # DoctoAsk
+![alt text][logo]
 
+[logo]: https://github.com/LeoPaulD/DoctoAsk/blob/master/symfony/public/dist/img/favicon.png "Logo Doctoask"
 ## Description 
 
 DoctoAsk met en relation des médecins à des patients via une messagerie instantanée, l'intélligence artificielle intégré a cette messagerie répond aux intérogations des patients.
