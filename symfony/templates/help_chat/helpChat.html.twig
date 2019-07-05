@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('cgu/css/style.css')}}" type="text/css">
+{% endblock %}
+
+{% block body %}
+<section class="contenu mb-5">
+    <div class="container d-flex ">
+        <div class=" justify-content-center row">
+            <h1 class="text-center pt-4 m-4">
+                <a href="{{path('help')}}">
+                    <b>CHATBOT AIDE !</b>
+                </a>
+            </h1>
+            <h2 class="text-center col-10 p-1">Comment parler à l’assistant numérique de son médecin ?</h2>
+            <div class="justify-content-center">
+                <p class="text-justify  col-12">
+                    <ol>
+                        <li class="p-1">Allez sur DoctoAsk.</li>
+                        <li class="p-1">Accédez au profil d’un médecin grâce à la barre de recherche sur la page
+                            d’accueil
+                            ou grâce à
+                            l’Annuaire</li>
+                        <li class="p-1">Sur le profil médecin vous pouvez ouvrir le chat et ainsi parler à l’assistant
+                            numérique de
+                            votre
+                            médecin.</li>
+                        <li class="p-1">Interrogez le, il essaiera de répondre au mieux à vos demandes.</li>
+                    </ol>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

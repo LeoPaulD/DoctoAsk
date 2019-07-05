@@ -1,0 +1,59 @@
+/* Les boutons */
+
+.primary-btn {
+    font-size: 1.1em;
+    height: 3.5em;
+    width: 20em;
+    transition: all 0.5s ease;
+}
+
+
+b {
+    font-family: "CompassBold";
+}
+
+.bg-presse {
+    width: 150px;
+    height: 50px;
+}
+.presse {
+    width: 100%;
+}
+
+.center{
+    margin:auto;
+    float:none;  /* annule le float:left de bootstrap*/
+}
+
+a > div > p, a > div > p:hover{
+    color: black;
+}
+
+h1 b{
+    color: #ab47bc;
+    font-size: 28px;
+}
+
+.shadow {
+    transition: .3s ease-in-out;
+    filter: opacity(.8);
+    margin-bottom: 30px;
+}
+
+.shadow:hover {
+    transform: scale(1.03);
+    filter: opacity(1);
+    border-radius: 20px;
+}
+
+.folder {
+    background-image: url("../img/folder.png");
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    display: flex;
+}
+
+.display {
+    width: 100%;
+}

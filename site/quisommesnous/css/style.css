@@ -1,0 +1,52 @@
+section {
+    font-family: "Compass", serif;
+    font-size: 1.1em;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #651FFF;
+    font-size: 24px;
+    margin: 20px 0 0; 
+}
+
+.qsm-color {
+    padding: 50px 0;
+    background: #651FFF;
+    color: #fff;
+}
+
+.qsm-title {
+    padding: 50px 0 20px;
+    color: #651FFF;
+}
+
+.qsm-main {
+    background: #fff;
+    color: #2a2a2a;
+    margin: 0 0 30px;
+}
+
+.qsm-border {
+    padding: 0 0 40px;
+    background: #fff;
+    color: #651FFF;
+}
+
+.qsm-main img {
+    border: 15px solid #651FFF; 
+    border-radius: 50%;
+    width: 250px;
+    margin: 20px 0 0;
+    transition: all 0.5s ease;
+}
+
+.qsm-main img:hover {
+    transform: rotate(-5deg);
+    filter: drop-shadow(3px 3px 6px #000);
+}
+
+.qsm-main .img_hover2:hover {
+    transform: rotate(5deg);
+}

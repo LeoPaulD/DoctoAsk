@@ -1,0 +1,19 @@
+.profil-img > div> img {
+    
+    width: 50vh;
+}
+
+.container > div {
+    display: flex;
+}
+
+h1 {
+    font-family: "Compass";
+    font-size: 5em;
+}
+
+.bg-sub {
+    font-size: 1.1em;
+    height: 3.5em;
+    width: 20em;
+}

@@ -1,0 +1,131 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('presse/css/style.css')}}" type="text/css">
+{% endblock %}
+
+{% block body %}
+<section class="container contenu pt-5 pb-5">
+
+        <!--  1 : La Presse en parle -->
+
+        <div class="row">
+            <h1 class="col-12 text-center p-3 pb-4" style="color : purple ">
+                <b> LA PRESSE EN PARLE</b>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <a href="#"><div class="col-lg-12 shadow pt-4 pb-1">
+                    <div class="bg-presse center">
+                        <img src="{{asset('presse/img/sudouest.png')}}" alt="sudouest" class="presse">
+                    </div>
+                    <p class="text-center p-2 ">DoctoAsk est la plateforme qui rapproche les médecins des patients dans les desserts médicaux.</p>
+                    <p class="text-right"><b>24/11/2018</b></p>
+                </div></a>
+            </div>
+            <div class="col-lg-6">
+                <a href="#"><div class="col-lg-12 shadow pt-4 pb-1">
+                    <div class="bg-presse center p-1">
+                        <img src="{{asset('presse/img/LeMonde.png')}}" alt="LeMonde" class="presse">
+                    </div>
+                    <p class="text-center p-2">Des étudiants de l'Université de Bordeaux ont créé un chatbot révolutionnaire !</p>
+                    <p class="text-right"><b>13/11/2018</b></p>
+                </div></a>
+            </div>
+            <div class="col-lg-6">
+                <a href="#"><div class="col-lg-12 shadow pt-4 pb-1">
+                    <div class="bg-presse center p-1">
+                        <img src="{{asset('presse/img/linternaute.png')}}" alt="linternaute" class="presse">
+                    </div>
+                    <p class="text-center p-2">La plateforme DoctoAsk rend maintenant service à plus de 500 médecins dans toute la France !</p>
+                    <p class="text-right"><b>13/11/2018</b></p>
+                </div></a>
+            </div>
+            <div class="col-lg-6">
+                <a href="#"><div class="col-lg-12 shadow pt-4 pb-1">
+                    <div class="bg-presse center p-1">
+                        <img src="{{asset('presse/img/letudiant.png')}}" alt="letudiant" class="presse">
+                    </div>
+                    <p class="text-center p-2">Un outil qui aide les médecins en leur faisant gagner du temps ! Découvrez DoctoAsk, votre assistant médecin.</p>
+                    <p class="text-right"><b>05/11/2018</b></p>
+                </div></a>
+            </div>
+        </div>
+
+        <!-- 2 : DoctoAsk en quelques mots -->
+
+        <div class="container pt-4">
+            <h1 class="text-center p-4" style="color : purple">
+                <b>DOCTOASK EN QUELQUES MOTS </b>
+            </h1>
+            <p class="text-center">
+                DoctoAsk permet aux médecins de fournir des réponses simples aux questions les plus courantes de
+                leurs patients,
+                tout en restant concentrés sur les tâches les plus importantes de leur travail quotidien.
+                Plus besoin d'avoir à chercher sur internet ou d'appeler son cabinet pour obtenir des informations
+                sur votre médecin,
+                grâce à DoctoAsk, vous optiendrez rapidement vos réponses !
+            </p>
+        </div>
+
+        <!-- 3 : Ressources -->
+        <div class="container pt-4">
+            <h1 class="col-12 text-center p-4" style="color : purple ">
+                <b> RESSOURCES</b>
+            </h1>
+            <p class="text-center">Ci-dessous les principales ressources de DoctoAsk, à savoir : Logos, Charte graphique et Images.
+            </p>
+        </div>
+        <div class="row pt-4">
+            <div class="col-lg-4 pb-5">
+                <div class="folder justify-content-center align-items-center mx-auto">
+                    <span>Logos</span>
+                </div>
+                <div class="text-center">
+                    <button class="bg-sub ">Télécharger</button>
+                </div>
+            </div>
+            <div class="col-lg-4 pb-5">
+                <div class="folder justify-content-center align-items-center mx-auto">
+                    <span>Charte graphique</span>
+                </div>
+                <div class="text-center">
+                    <button class="bg-sub ">Télécharger</button>
+                </div>
+            </div>
+            <div class="col-lg-4 pb-5">
+                <div class="folder justify-content-center align-items-center mx-auto">
+                    <span>Images</span>
+                </div>
+                <div class="text-center">
+                    <button class="bg-sub ">Télécharger</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 4 Communiqués de presse  -->
+
+        <div class="container">
+            <h1 class="text-center p-4" style="color : purple">
+                <b>COMMUNIQUÉ DE PRESSE</b>
+            </h1>
+            <p class="text-center ">Retrouvez nos communiqués officiels</p>
+            <div>
+                <p class="text-center p-4">
+                    <b>1 Janvier 2019 : </b>Plus de 500 médecins fond déja confiance à DoctoAsk.
+                </p>
+            </div>
+            <div class="text-center">
+                <a href="{{ path('help') }}" class="btn bg-sub primary-btn col-4">
+                    <p class="pt-2">Nous contacter</p>
+                </a>
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}

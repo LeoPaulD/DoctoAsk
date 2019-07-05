@@ -1,0 +1,92 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<!-- Contenu de la page -->
+<section class="contenu">
+<div class="col-12">
+    <div>
+        <h1 class="text-center m-4">Praticien&nbsp;? Inscrivez-vous&nbsp;!</h1>
+    </div>
+</div>
+<!-- 1 : Configuration du profil medecin -->
+<div class="container">
+
+    <div class="mx-auto p-4 profil-img mx-auto justify-content-center align-items-center col-12">
+        <div class="justify-content-center align-items-center">
+            <img src="{{ asset('dist/img/logo.png')}}" alt="logo">
+        </div>
+    </div>
+
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_start(form) }}
+      {{ form_errors(form) }}
+          <div class="justify-content-center">
+              <div class="col-lg-12  mx-auto">
+                  <div class="row">
+                      <div class="row inscription">
+                          <div class="col-md-12 font-italic mt-3 text-center requis">
+                              Les champs marqués de * sont requis.
+                          </div>
+                          <div class="col-md-6 ml-2 mt-5">
+                              {{ form_row(form.genre) }}
+                          </div>
+                          <div class="col-md-6 p-4">
+                              <!--Nom-->
+                              {{ form_row(form.nom) }}
+                          </div>
+                          <div class="col-md-6 p-4">
+                              <!--Prénom-->
+                              {{ form_row(form.prenom) }}
+                          </div>
+                          <div class="col-md-6 p-4">
+                              <!--Spécialité-->
+                              {{ form_row(form.specialite) }}
+                          </div>
+                          <div class="col-md-6 p-4">
+                              <!--Email-->
+                              {{ form_row(form.email) }}
+                          </div>
+                      </div>
+                      <div class="row password">
+                          <div class="row-md-12 w-100 p-4">
+                              <!--password - rue-->
+                              {{ form_row(form.plainPassword) }} 
+                          </div>
+                      </div>
+                      <div class="row inscription">
+                          <div class="container mt-4">
+                              <h2 class="text-center">Informations complémentaires</h2>
+                          </div>
+                          <div class="col-md-6 p-4">
+                              <!--Téléphone-->
+                              {{ form_row(form.telephone) }}
+                          </div>
+                          <div class="col-md-6 p-4">
+                              <!--Site web-->
+                              {{ form_row(form.site_web) }}
+                          </div>
+                          <div class="col-md-6 p-4">
+                              <!--Lien doctolib-->
+                              {{ form_row(form.doctolib) }}
+                          </div>
+                      </div>
+                      <div class="col-10 mx-auto m-4 mb-5">
+                          <div class="row">
+                              <div class="col mb-3 ml-3">
+                                  <input type="checkbox" class="mt-1 mr-2" required><span>J'ai lu et j'accepte les <a href="{{ path('cgu')}}" target="_blank">conditions générales d'utilisation*</a></span><br>
+                                  <input type="checkbox" class="mt-1 mr-2" checked><span>J'accepte de recevoir la newsletter de <a href="{{ path('default')}}" target="_blank">DoctoAsk</a></span>
+                              </div>
+                              <div class="col-md-6 text-center mt-2 mb-4">
+                                  <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn bg-sub primary-btn col-8" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+    {{ form_row(form._token) }}
+    {{ form_end(form) }}
+    {{ form_rest(form) }}
+
+  </div>
+</section>

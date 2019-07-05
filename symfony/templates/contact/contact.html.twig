@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% form_theme formContact 'bootstrap_4_layout.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('help/css/style.css')}}" type="text/css">
+{% endblock %}
+
+{% block body %}
+<section class="contenu text-center">
+    <div class="container">
+        <h1>Formulaire de contact !</h1>
+        {{form_start(formContact)}}
+        {{form_row(formContact.object,{'attr': {'placeholder': 'Objet'}})}}
+        {{form_row(formContact.message,{'attr': {'placeholder': 'Message'}})}}
+        {{form_row(formContact.name,{'attr': {'placeholder': 'nom'}})}}
+        {{form_row(formContact.prenom,{'attr': {'placeholder': 'prenom'}})}}
+        {{form_row(formContact.mail,{'attr': {'placeholder': 'mail'}})}}
+
+        <button type="submit" class="bg-sub p-2 m-4">
+            Envoyer message
+        </button>
+        {{form_end(formContact)}}
+    </div>
+    {% endblock %}

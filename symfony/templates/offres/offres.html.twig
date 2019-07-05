@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('offres/css/style.css')}}" type="text/css">
+{% endblock %}
+
+{% block body %}
+<!-- 1 : Description des offres -->
+    <section class="contenu">
+    <div class="offres">
+        <div class="container">
+            <h1 class="text-center pt-4" >
+                Nos offres
+            </h1>
+            <p class="text-center p-4">
+                DoctoAsk vous propose 2 tarifs différents, chacun contenant un lot de questions/réponses à configurer pour le chatbot, le nombre dépendant du tarif choisi. Il s’agit d’un abonnement mensuel, la première année étant offerte afin de vous faire découvrir notre service. 
+            </p>
+        </div>
+    </div>
+
+    <!-- 2 : Les Offres -->
+    <div class="container">
+        <div class="row pt-4">
+            {% for offre in offres %}
+                <a class="col-lg-6 p-3" href="{{ path('paiement',{'id':offre.id})}}">
+                    <div class="col-12">
+                        <div class="img-offres align-items-end mx-auto" style="background-image : url({{ asset(offre.cheminImg)}});">
+                            <div class="text-center p-2">
+                                <p><b>{{ offre.prix }} € par mois</b><br>{{ offre.contenu }}  questions + première année offerte</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        <p class="text-center font-italic p-4">
+            Une fois l’offre sélectionnée, et votre inscription terminée, vous pourrez alors configurer, dans votre espace personnel, vos questions/réponses, ainsi que tester le chatbot tel que le visiteur le percevra.
+        </p>
+    </div>
+    <div class="col-12 p-4 pb-5 text-center">
+       <a href="{{ path('help') }}"> <button class="bg-sub p-2">
+            <p>Nous contacter</p>
+        </button></a>
+
+    </div>
+
+    </section>
+{% endblock %}

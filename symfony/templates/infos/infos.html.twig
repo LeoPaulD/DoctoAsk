@@ -1,0 +1,154 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('infos/css/style.css')}}" type="text/css">
+{% endblock %}
+
+{% block body %}
+
+<section class="contenu">
+
+  <div class="container-fluid py-4">
+    <div class="row">
+
+      <div class="mx-auto">
+        <img
+          src="
+
+          {% if infos.photo != 0 %}
+              {{ asset('dist/img/pp-medecin/' ~ user.nom ~ '_' ~ user.prenom ~ '.jpg')}}
+          {% elseif user.genre == 0 %}
+              {{ asset('dist/img/pp-medecin/default_dr_M.jpg')}}
+          {% else %}
+              {{ asset('dist/img/pp-medecin/default_dr_F.jpg')}}
+          {% endif %}
+
+          "
+          alt="Photo de profil du {{ user.specialite }}, {{ user.nom }} {{ user.prenom }}">
+      </div>
+
+    </div>
+
+    <div class="row pt-4">
+      <h1 class="mx-auto">Dr. {{ user.nom }}</h1>
+    </div>
+
+    <div class="row">
+      <h2 class="mx-auto">{{ user.specialite }}</h2>
+    </div>
+
+  </div>
+
+  <div class="container pt-3 pb-5">
+
+    <div class="row justify-content-center">
+
+      <div class="jumbotron col-12 col-md-5 m-1">
+        <h1>Présentation</h1>
+        <p>{{ infos.presentation }}</p>
+      </div>
+
+      <div class="jumbotron col-12 col-md-5 m-1">
+        <h1>Horaires</h1>
+        <p>{{ infos.horaires }}</p>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+      <div class="jumbotron col-12 col-md-5 m-1">
+        <h1>Tarifs et remboursement</h1>
+        <p>Consultation :
+          {{ infos.tarif }}€</p>
+        <p>Convention secteur
+          {{ infos.convention }}</p>
+        <p>Carte vitale :
+          {% if infos.CarteVitale == 1 %}
+            Acceptée
+          {% else %}
+            Rejetée
+          {% endif %}
+        </p>
+      </div>
+
+      <div class="jumbotron col-12 col-md-5 m-1">
+        <h1>Moyen de paiement</h1>
+        <p>
+          <span class="badge
+          {% if infos.cb == 1 %}
+             badge-success">
+          {% else %}
+             badge-danger">
+          {% endif %}
+            Carte bleu</span>
+        </p>
+        <p>
+          <span class="badge
+          {% if infos.cheque == 1 %}
+             badge-success">
+          {% else %}
+             badge-danger">
+          {% endif %}
+            Chèque</span>
+        </p>
+        <p>
+          <span class="badge
+          {% if infos.espece == 1 %}
+             badge-success">
+          {% else %}
+             badge-danger">
+          {% endif %}
+            Espèce</span>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+      <div class="jumbotron col-12 col-md-5 m-1">
+        <h1>Site web de votre médecin</h1>
+        <a class="btn btn-primary" href="{{ user.siteWeb }}" role="button" target="_blank">
+          <i class="fas fa-link"></i> Voir le site</a>
+      </div>
+
+      <div class="jumbotron col-12 col-md-5 m-1">
+        <h1>Profil Doctolib</h1>
+        <a class="btn btn-primary" href="{{ user.doctolib }}" role="button" target="_blank">
+          <i class="fas fa-user-md"></i> Voir la page</a>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+      <div class="jumbotron col-12 col-md-10 m-1">
+
+        <h1>Localisation</h1>
+        <p>{{ infos.rueCabinet }}<br>{{ infos.codePostal }}, {{ infos.villeCabinet }}</p>
+
+        <div style="overflow:hidden;width: 100%;height: 440px;" class="mx-auto">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q={{ infos.rueCabinet }}+{{ infos.villeCabinet }}+{{ infos.paysCabinet }}&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0">
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 btn-chat fixed-bottom mx-auto">
+      <a href="{{ path('chatbot',{'id':user.id})}}">
+        <i class="fas fa-comment-dots"></i> Parler au Dr. {{user.nom}}</a>
+    </div>
+
+  </section>
+
+{% endblock body %}

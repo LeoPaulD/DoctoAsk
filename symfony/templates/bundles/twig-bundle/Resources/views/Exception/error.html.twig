@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('404/css/style.css')}}" type="text/css">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class=" profil-img d-flex col-12">
+        <div class="mx-auto justify-content-center align-items-center m-5">
+            <img src="{{ asset('src/logo.png')}}" alt="logo doctoask">
+        </div>
+    </div>
+
+    <h1 class="text-center m-4">Erreur {{ status_code }}</h1>
+    <h2 class="text-center">"{{ status_text }}"</h2>
+    <div class=" justify-content-center  m-4 mb-5 text-center">
+        <a href="{{path('default')}}">
+            <button class="bg-sub m-4 p-3">Retour accueil</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

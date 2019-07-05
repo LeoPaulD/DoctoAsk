@@ -1,0 +1,123 @@
+.chat {
+  font-family: "MADE", sans-serif;
+  padding: 5vh 0 20vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.msgEntity {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.msgUser {
+  flex-direction: row-reverse;
+}
+
+.alert {
+  color: white;
+  border-radius: 35px;
+  width: calc(100% - (10px + 40px + 10px));
+  position: relative;
+  border: none;
+}
+
+.alert-secondary{
+  background: #651fff;
+}
+
+.alert-secondary::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 20px 10px 0;
+  border-color: transparent #651fff transparent transparent;
+}
+
+.alert-primary {
+  background: #AB47BC;
+  border-radius: 35px 35px 0;
+  margin-bottom: 0;
+}
+/* 
+.alert-primary::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #AB47BC;
+  transform: rotate(35deg);
+} */
+
+.msg > span {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 20px 10px 0;
+  border-color: transparent #651fff transparent transparent;
+  position: absolute;
+  top: 13px;
+  left: -13px;
+}
+
+.send-time {
+  color: #AB47BC;
+  margin: 0 60px 10px 0;
+  float: right;
+}
+
+.imgProfil {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+	transition: .3s ease-in-out;
+}
+
+.imgProfil:hover {
+  filter: brightness(1.05);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.imgProfil img {
+  height: 100%;
+}
+
+.inputChat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+
+input {
+  width: 100%;
+  border: 2px solid #651fff;
+  border-radius: 30px 0 0 30px;
+  padding: 0 0 0 15px;
+  height: 50px;
+  outline: none;
+}
+
+.send {
+  width: 30%;
+  border-radius: 0 30px 30px 0;
+  margin-left: -2px;
+  padding: 0;
+}
+

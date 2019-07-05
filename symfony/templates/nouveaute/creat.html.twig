@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% form_theme formNouveaute 'bootstrap_4_layout.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('help/css/style.css')}}" type="text/css">
+{% endblock %}
+
+{% block body %}
+<section class="contenu text-center">
+ <div class="container">
+   <h1>Création des Nouveautées</h1>
+    {{form_start(formNouveaute)}}
+   {{form_row(formNouveaute.title,{'attr': {'placeholder': 'Titre de la nouveauté'}})}}
+   {{form_row(formNouveaute.content,{'attr': {'placeholder': 'Description de la nouveauté'}})}}
+   
+
+   <button type="submit" class="bg-sub p-2 m-4">{% if editMode %}Enregistrer modification{% else %}
+       Ajouter nouveauté
+       {% endif %}
+    </button>
+   {{form_end(formNouveaute)}}
+   </div>
+</section>
+{% endblock %}

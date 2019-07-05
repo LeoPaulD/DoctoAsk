@@ -1,0 +1,106 @@
+/* Les boutons */
+
+.primary-btn {
+    font-size: 1.1em;
+    height: 3.5em;
+    width: 20em;
+    transition: all 0.5s ease;
+}
+
+/* Tailles et couleurs */
+
+.contenu >.container {
+    background-color: rgb(248, 248, 248);
+    border-radius: 30px;
+}
+
+.profil-img > div > img {
+    height: 30px;
+    width: 30px;
+}
+.container > div {
+    display: flex;
+}
+
+/* Les cercles */
+
+.profil-img {
+    background-position: center;
+    background-repeat: none;
+    height: 20vh;
+    width: 20vh;
+    background-size: cover;
+    border-radius: 100%;
+    border: solid 10px #651FFF;
+    display: flex;
+}
+.profil-img > div {
+    background-color: azure;
+    border: solid 1px black;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    transition: transform .2s;
+}
+
+/* Les annimations */
+
+.profil-img > div:hover {
+    transform: scale(1.2);
+}
+
+/* Les polices d'écritures */
+
+h1, h2{
+    font-family: "Compass";
+}
+
+h2 {
+    font-size: 1.7em;;
+    margin: 0 0 10px;
+}
+
+label {
+    font-family: "Compass";
+    font-size: 1em;
+}
+
+form span {
+    font-size: 1.1em;
+}
+
+form {
+    margin: 0 0 40px;
+}
+
+input[type=text], [type="email"], [type="tel"], [type="number"], select, textarea {
+    display: block;
+    border: 2px solid #651fff;
+    border-radius: 30px;
+    padding: 0 0 0 15px;
+    width: 100%;
+    height: 50px;
+    outline: none;
+}
+
+textarea {
+    border-radius: 10px;
+    height: 130px;
+    padding-top: 5px;
+    overflow: hidden;
+}
+
+.requis {
+    font-size: 12px;
+}
+
+.cabinet {
+    background-color: #651fff;
+    color: #fff;
+    padding: 10px 10% 20px;
+}
+
+.inscription {
+    padding: 10px 10%;
+}

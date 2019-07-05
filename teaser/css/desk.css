@@ -1,0 +1,234 @@
+@font-face {
+	font-family: "compass";
+	src: url('../src/Fonts/compass.ttf');
+}
+
+.loader {
+position : fixed;
+z-index: 9999;
+top : 0px;
+left : 0px;
+height : 100%;
+width : 100%;
+cursor : wait;
+background-color: #651FFF;
+}
+.loader>div
+{
+  background : url('../src/img/loader.gif') 50% 50% no-repeat;
+  height : 100%;
+  width : 100%;
+}
+body
+{
+  /* background-color: #651FFF; */
+	background-image: url(../src/img/bg2.jpg);
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 0;
+	margin: 0;
+}
+.logo_m
+{
+  display: none;
+}
+.logo_d
+{
+  display: flex;
+  justify-content: center;
+	margin: 70px;
+}
+.logo_d div
+{
+  width: 70%;
+}
+.logo_d div img
+{
+  width: 100%;
+}
+
+.mobile
+{
+	width: 45vw;
+	height: 100vh;
+  display: flex;
+  justify-content: center;
+	overflow: hidden;
+	order: 2;
+}
+.mobile div
+{
+  width: 60%;
+  margin: auto;
+	position: relative;
+	top: 200px;
+}
+.mobile img
+{width: 100vw;
+  width: 100%;
+}
+.contain
+{
+	width: 45vw;
+	height: 100vh;
+	max-height: 100vh;
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
+  flex-direction: column;
+  color: white;
+  font-family: "compass";
+	background-color: rgb(251,252,252);
+	order: 1;
+}
+.contain>div
+{
+	width: 80%;
+}
+.contain input+p
+{
+  width: 80%;
+}
+.contain>div>h1
+{
+	color: #651FFF;
+	font-size: 3vw;
+}
+.contain>div>p
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1vw;
+	color: #263238;
+}
+form
+{
+  width: 80%;
+}
+form div
+{
+  margin-top: 10px;
+}
+.form div:first-child
+{
+  display: flex;
+  align-items: center;
+}
+.form div:first-child p
+{
+  margin: 10px;
+	color: #651FFF;
+}
+#engagement
+{
+	font-size: 0.7vw;
+	color: black;
+}
+.form div:first-child input[type="radio"]
+{
+  width: 10vw;
+}
+
+form input:not([type="radio"])
+{
+	background-color: white;
+  border: 2px solid #651FFF;
+  padding: 3%;
+	font-size: 1.5vw;
+}
+
+.mail
+{
+  width: 100%;
+  display: flex;!important
+
+
+}
+input[type="email"]
+{
+  width: 70%;
+	border: 2px solid;
+  border-image: linear-gradient(to right,#651FFF, #2962ff) 10 round;
+}
+input[type="submit"]
+{
+	display: flex;
+	justify-content: center;
+	background: linear-gradient(to right,#651FFF, #2962ff);
+  color: white;
+  width: 30%;
+	border-radius: 0px 10px 10px 0px;
+}
+input[type="submit"]:hover
+{
+	background: white ;
+	color: #651FFF;
+}
+input::placeholder
+{
+  color: #651FFF;
+	opacity: 0.7;
+}
+.social
+{
+  display: flex;
+	justify-content: center;
+}
+.social div
+{
+  width: 15%;
+}
+.social img
+{
+  width: 100%;
+}
+
+.logo_univ
+{
+	display:flex;
+	justify-content:center;
+	flex-direction: column;
+	align-items: center;
+	color: grey;
+	font-size: 0.6vw;
+}
+.logo_univ>div
+{
+	width:20%;
+}
+.logo_univ>div>img
+{
+	width:100%;
+}
+.alert {
+    padding: 20px;
+
+    color: white;
+		position: absolute;
+		z-index: 1000;
+		max-width: 100vh;
+}
+.success
+{
+	background-color: #40d47e;
+}
+.badFormat
+{
+	background-color: #e74c3c;
+}
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}

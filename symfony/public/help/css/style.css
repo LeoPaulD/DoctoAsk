@@ -1,0 +1,62 @@
+section {
+    font-family: "Compass", serif;
+}
+
+h1 {
+    padding: 15px 0 0;
+    color: #2a2a2a;
+}
+
+.search-bar {
+    background-color: #e0e0e0;
+    border-top: 1px solid #651FFF;
+    height: 80px;
+}
+
+.search-bar input {
+    margin: 20px 0 0;
+    height: 35px;
+    border-bottom: 1px solid #651FFF;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-left:30px;
+    color: #2a2a2a;
+}
+
+.search-icon {
+    position: absolute;
+    padding: 28px 0 0 7px;
+    color: #651FFF;
+    transition: all 0.5s ease;
+}
+
+.search-icon:hover {
+    filter: brightness(150%);
+    transform: scale(1.1);
+}
+
+.problems {
+    padding: 50px 0;
+}
+
+.problems div {
+    background-color: #651FFF;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    margin: 20px;
+    padding-top: 90px;
+    transition: all 0.5s ease;
+}
+
+.problems div:hover {
+    transform: scale(0.9);
+    background-color: #fff;
+    color: #651FFF;
+    border: 1px solid #651FFF;
+}
+
+div a:hover {
+    text-decoration: none;
+}

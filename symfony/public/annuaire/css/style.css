@@ -1,0 +1,121 @@
+body
+{
+  padding: 0;
+  margin: 0;
+  background-color: #ecf0f1
+}
+h1 {
+  font-family: "Compass";
+  padding: 20px 0 0;
+}
+.container-fluid {
+  padding: 0 0 50px;
+}
+#filtreDesk
+{
+  display: none;
+  margin: 50px 0 0;
+}
+#filtreMobile
+{
+  background: linear-gradient(to right,#651FFF, #2962ff);
+  z-index: 100;
+  top:90vh;
+  left: inherit;
+}
+#filtreMobile>.row:first-child
+{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+#filtreMobile>.row>div
+{
+  display: flex;
+  /* align-items: center; */
+}
+#filtreMobile>.row>div>p
+{
+  width: 100%;
+  text-align: center;
+  margin:10px;
+  color: #fff;
+}
+#champs
+{
+  height: 100vh;
+  background-color: white;
+}
+form button{
+  border: none;
+}
+form>p
+{
+  border-bottom: 1px solid #651FFF;
+  background-color: white;
+}
+.img-medecin {
+    height: 240px;
+    display: flex;
+    background-size: cover;
+}
+label > span {
+  padding-left: 5px;
+}
+.fiche {
+
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .1s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.fiche:hover {
+    -webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.fiche>div>div>p
+{
+  font-family:"Compass";
+}
+.fiche>div>div>p>b
+{
+  font-family:"MADE";
+}
+.fiche>div>p>b
+{
+  font-family:"MADE";
+}
+
+.img-medecin >div {
+
+    color: white;
+    background-color:rgba(0,0,0, 0.6);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Compass";
+}
+.search-icon
+{
+  background-color: #651FFF;
+  color: #fff;
+  border-radius: 100px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: -20px;
+  bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s ease-in-out;
+}
+.search-icon:hover {
+  background-color: #fff;
+}
+.badge {
+    background-color: #651FFF;
+    color: #fff;
+    font-size: 0.9em;
+}

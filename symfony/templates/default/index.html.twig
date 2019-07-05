@@ -1,0 +1,164 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('default/css/style.css')}}" type="text/css">
+{% endblock %}
+{% block body %}
+<section class="contenu">
+      <!-- Page d'accueil  -->
+      <div class="first">
+        <div class="container">
+          <div class="row">
+            <!-- Image mascotte -->
+            <div class="col-6 col-md-4 mx-auto">
+              <img src="{{ asset('dist/img/personnage-femme.png')}}" alt="mascotte doctoask">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10 mx-auto">
+              <h1 class="accroche mx-auto">Bonjour, Comment puis-je vous aider&nbsp;?</h1>
+            </div>
+          </div>
+          <!-- Barre de recherche -->
+          <div class="row">
+            <div class="input-group search col-8 mx-auto">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+              </div>
+              <input type="text" id="input_doctor" class="form-control" placeholder="Rechercher un medecin" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7  mx-auto " id="liste">
+                {% for docteur in docteurs %}
+                  <p id="{{docteur.id}}"><a href="{{ path('infos', {'id':docteur.id}) }}">{{docteur.nom}} {{docteur.prenom}} {{docteur.specialite}}</a></p>
+                {% endfor %}
+            </div>
+          </div>
+          <!-- Boutons -->
+          <div class="row justify-content-center mt-3">
+              <div class="col-7 col-lg-3 d-flex ">
+                  <a href="{{ path('annuaire')}}" class="btn bg-sub-light m-2 mx-auto">
+                    Annuaire médical
+                  </a>
+              </div>
+              <div class="col-8 col-lg-3 d-flex">
+                  <a href="{{ path('fos_user_security_login') }}" class="btn bg-sub-light m-2 mx-auto">
+                    Êtes-vous praticien ?
+                  </a>
+              </div>
+          </div>
+          <div class="row py-3 text-light">
+              <p class="col-12 text-center">Hey, par ici !</p>
+              <i class="fas fa-angle-down fa-3x bounce arrow mx-auto"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Didactitiel -->
+      <div class="dictaticiel">
+        <div class="container">
+          <div class="row">
+            <div class="col-4 mx-auto">
+              <img src="{{ asset('dist/img/loader.gif')}}" alt="mascotte doctoask">
+            </div>
+          </div>
+
+          <div class="row">
+            <button type="button" class="btn bg-sub-light mx-auto">
+              Didactitiel bientôt disponible
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide mb-5">
+        <div class="container-fluid">
+          <!-- Notre mission -->
+          <div class="row">
+            <div class="col-12 col-md-6 pl-4 pr-4">
+              <h1 class="mx-4 mb-0">Notre mission<br><span>DoctoAsk, l'assistant de votre médecin, afin d'obtenir des renseignement en quelques clics !</span></h1>
+              <p class="mx-4">
+                DoctoAsk permet aux médecins de fournir des réponses simples aux questions les plus courantes de leurs patients, tout en restant concentrés sur les tâches les plus importantes de leur travail quotidien. Plus besoin de devoir rechercher sur internet ou d’appeler son cabinet pour obtenir des informations sur votre médecin, grâce à DoctoAsk, vous obtiendrez rapidement vos réponses !
+              </p>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center">
+              <img src="{{ asset('dist/img/bg-accueil/background-para.jpg')}}" alt="bgpara">
+            </div>
+          </div>
+          <!-- Trouver votre médecin -->
+          <div class="row">
+            <div class="col-12 col-md-6 ">
+              <h1 class="mx-4 mb-0">Trouver votre médecin en quelques clics.<br><span>À votre disposition 24/7</span></h1>
+              <p class="mx-4">
+                Votre médecin est déjà sur l’application ? Consultez l’annuaire ou saisissez son nom dans la barre de recherche afin d’acceder à son chatbot, vous pourrez ainsi lui poser vos questions.
+                Toutes les réponses sont certifiées par votre practicien, il n’existe pas de source plus sûre !
+                Si celui-ci n’est pas encore sur l’application, invitez le à nous découvrir grâce à son adresse mail.
+              </p>
+              <div class="">
+              <a href="{{ path('annuaire')}}">
+                <button  type="button" class="btn bg-sub mt-4">
+                  Explorer l'annuaire médicale
+                </button>
+              </a>
+              </div>
+
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center">
+              <img src="{{ asset('dist/img/bg-accueil/bg-trouver.jpeg')}}" alt="bgaccueil">
+            </div>
+          </div>
+          <!-- Agissez -->
+          <div class="row">
+            <div class="col-12 col-md-6 ">
+              <h1 class="mx-4 mb-0">Agissez en tant que membre DoctoAsk<br><span>Et facilitez-vous la vie</span></h1>
+              <p class="mx-4">
+                Grâce à nous, vous ne perdrez plus de temps à répondre toujours là même chose aux même questions.
+  Notre application vous permettra de saisir ces questions ainsi que leur réponse pour que vos patients trouvent facilement l’information souhaitée, sans vous déranger pendant vos heures de travail.
+              </p>
+              <div class="">
+                <a href="{{ path('qui_sommes_nous')}}">
+                  <button  type="button" class="btn bg-sub mt-4">
+                    En savoir plus
+                  </button>
+                </a>
+              </div>
+
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center">
+              <img src="{{ asset('dist/img/bg-accueil/bg-agire.jpg')}}" alt="bgagire">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+{% endblock %}
+{% block javascript%}
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready( function() {
+            $("#liste").hide();
+              $('#input_doctor').keyup(function (e) {
+                $("#liste").hide();
+                $("#liste p").hide();
+                console.log("test");
+                contenu = $('#input_doctor').val();
+                $.ajax({
+                  type: 'POST',
+                  url: "{{ path('liste_docteurs') }}",
+                  data: 'nom_medecin=' + contenu,
+                  success: function (data) {
+
+                     console.log(data);
+                     $.each( data, function( key, val ) {
+                       $("#liste").show();
+                        $('#'+val.id).show();
+                      });
+                      $("#list").html(data)
+                  }
+              });
+             });
+            });
+	    </script>
+
+{% endblock %}

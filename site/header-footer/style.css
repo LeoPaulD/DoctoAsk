@@ -1,0 +1,259 @@
+/*--------GENERAL--------*/
+
+body {
+  font-family: "MADE", sans-serif;
+  margin: 0;
+}
+
+footer > div > div > div:first-child > ul.is-active {
+  display: none !important;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+header li a {
+  transition: all 0.5s ease;
+}
+
+header li a:hover {
+  color: #ab47bc;
+}
+
+/*---------------MOBILE---------------*/
+
+.mobile > section.is-active > nav {
+  animation: toggleNav 1s ease;
+  left: 0;
+}
+
+.mobile > section > div > span {
+  background: #404040;
+  width: 25px;
+  height: 5px;
+  margin-bottom: 5px;
+}
+
+/*---Section Nav Mob---*/
+
+.mobile > section > nav {
+  z-index: 1000;
+  top: 0;
+  padding: 37px 25px;
+  width: calc(80vw - (25px * 2));
+  min-width: 400px;
+  max-width: 600px;
+  height: calc(100vh);
+  animation: untoggleNav 1s ease;
+  left: calc(-100vw - 10vw - (37px * 2));
+}
+
+.mobile > section > nav > div:first-child > div {
+  width: 25px;
+  height: 25px;
+  top: 5px;
+}
+
+.mobile > section > nav > div:first-child > div > span {
+  height: 5px;
+}
+
+.mobile > section > nav > div:first-child > div > span:first-child {
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.mobile > section > nav > div:first-child > div > span:last-child {
+  transform: rotate(-45deg);
+}
+
+.mobile > section > nav > div:first-child > ul > li > a {
+  font-family: "MADE_Bold", sans-serif;
+  color: #651FFF;
+}
+
+.mobile > section > nav > div:first-child > ul > li > a > button {
+  background: #651FFF;
+  transition: all 0.5s ease;
+}
+
+.mobile > section > nav > div:first-child > ul > li > a > button:hover {
+  background: white;
+}
+
+.mobile > section > nav  > ul {
+  width: 100px;
+}
+
+.mobile > section > nav > ul > a {
+  width: 25px;
+  height: 25px;
+}
+
+.mobile > section > nav > ul > a > li > i {
+  font-size: 25px;
+  color: #651fff;
+}
+
+/*---Section Logo---*/
+
+.mobile > section:nth-child(2),
+.desktop > section {
+  height: 50px;
+}
+
+.mobile > section:nth-child(2) > a > img,
+.desktop > section > a > img {
+  height: 100%;
+}
+
+/*---Section User---*/
+
+.mobile > section:last-child {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+}
+
+.mobile > section:last-child > a > i {
+  font-size: 25px;
+  color: #404040;
+}
+
+.desktop > section > a > .md-size {
+  display: none;
+}
+
+/*---------------FOOTER---------------*/
+
+footer {
+  background: #651fff;
+}
+
+footer > div:first-child {
+  padding: 1vw 10vw;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer > div:first-child > div > div > div:first-child > i {
+  font-size: 16px;
+}
+
+footer > div:first-child > div > div:nth-child(3) > a > button:hover {
+  background: #651fff;
+}
+
+footer > div:first-child > div > div > div:nth-child(3) > ul > a > li > i {
+  font-size: 25px;
+}
+
+footer h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+}
+
+footer > div:last-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+footer > div:last-child > a {
+  height: 25px;
+}
+
+footer > div:last-child > a > img {
+  height: 100%;
+}
+
+footer > div:last-child span, footer > div:last-child > div > a {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+footer > div:last-child > div, footer > div:last-child > div > a {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+/*---------------RESPONSIVE---------------*/
+
+@media (max-width: 768px) {
+
+  .desktop {
+    display: none;
+  }
+
+  footer > div:first-child > div > div:first-child > ul > li > a:hover {
+    text-decoration: underline;
+  }
+
+  footer > div:first-child > div > div > ul > li, footer h5 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 0.15rem 0.15rem 0;
+    font-weight: 900;
+  }
+
+  footer > div:first-child > div > div:first-child > ul > li {
+    margin: .3rem 1rem;
+    text-transform: none;
+    font-weight: inherit;
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+
+  footer > div:first-child > div > div > div:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1214px) {
+
+  .desktop > section > a > .xl-size {
+    display: none;
+  }
+
+  .desktop > section > a > .md-size {
+    display: block;
+  }
+}
+
+@media (max-width: 969px) {
+
+  .desktop > nav > ul > li,
+  .desktop > nav >  a {
+      font-size: 13px;
+  }
+
+  .d-md-hide {
+    display: none;
+  }
+}
+
+/*---------------ANIMATION---------------*/
+
+@keyframes
+toggleNav {
+  from {
+    left: calc(-90vw);
+    display: block;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes
+untoggleNav {
+  from {
+    left: 0px;
+  }
+  to {
+    left: calc(-90vw);
+  }
+}
+

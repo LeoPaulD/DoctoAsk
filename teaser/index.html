@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <!-- Init. -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta Standard -->
+  <meta name="owner" content="Doctoask">
+  <meta name="author" content="Doctoask">
+  <meta name="title" content="DoctoAsk, l'assistant virtuel de votre médecin">
+  <meta name="keywords" content="Doctoask, medical, chatbot, assistant, medecin, sante, docteur, dialogue, bordeaux, iut, informatique, conseil, en ligne, sans, rendez-vous, question, parler a un specialiste, renseignement" />
+  <meta name="description" content="Trouvez votre médecin à travers l'annuaire en ligne et obtenez des conseils en quelques instants, où que vous soyez. Avec DoctoAsk, l'assistant virtuel, plus besoin de rendez-vous pour avoir des renseignements prédéfinis par votre médecin." />
+
+  <!-- Meta Facebook OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_fr">
+  <meta property="og:url" content="https://doctoask.com" />
+  <meta property="og:title" content="DoctoAsk, l'assistant virtuel de votre médecin" />
+  <meta property="og:description" content="Trouvez votre médecin à travers l'annuaire en ligne et obtenez des conseils en quelques instants, où que vous soyez. Avec DoctoAsk, l'assistant virtuel, plus besoin de rendez-vous pour avoir des renseignements prédéfinis par votre médecin.">
+  <meta property="og:site_name" content="DoctoAsk" />
+  <meta property="og:image" content="https://doctoask.com/img/social/carFb.jpg" />
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:see_also" content="https://twitter.com/_DoctoAsK">
+  <meta property="og:see_also" content="https://www.facebook.com/doctoask/">
+  <meta property="og:see_also" content="https://www.linkedin.com/company/doctoask/">
+
+  <!-- Meta Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@_DoctoAsK">
+  <meta name="twitter:creator" content="@_DoctoAsK">
+  <meta name="twitter:title" content="DoctoAsk, l'assistant virtuel de votre médecin">
+  <meta name="twitter:description" content="Trouvez votre médecin à travers l'annuaire en ligne et obtenez des conseils en quelques instants, où que vous soyez. Avec DoctoAsk, l'assistant virtuel, plus besoin de rendez-vous pour avoir des renseignements prédéfinis par votre médecin.">
+  <meta name="twitter:image" content="https://doctoask.com/img/social/carFb.jpg">
+
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="_hDyIC6cWiFHFWWRa3s6Qelu55jJUrSPYPpnwX708A8" />
+
+  <!-- Google Robots -->
+  <meta name="robots" content="all">
+
+  <!-- Google Links Ref. -->
+  <link rel="canonical" href="https://www.doctoask.com">
+  <link rel="alternate" href="https://www.doctoask.com" hreflang="x-default">
+
+  <!-- Humans.txt authorship http://humanstxt.org -->
+  <link type="text/plain" rel="author" href="/humans.txt">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" media="screen and (min-width: 640px)" href="css/desk.css" type="text/css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/main.css" type="text/css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127739125-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+      function gtag(){
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'UA-127739125-1');
+  </script>
+</head>
+
+<div class="loader">
+  <div></div>
+</div>
+
+<body>
+  <section class="logo logo_m">
+    <div>
+      <img src="src/img/logo_blanc.png" alt="logo Doctoask">
+    </div>
+  </section>
+  <section class="mobile">
+    <div>
+      <img src="src/img/iphone.gif" alt="Gif animé du tchat">
+    </div>
+  </section>
+  <section class="contain">
+    <section class="logo logo_d">
+      <div>
+        <img src="src/img/logo.png" alt="logo Doctoask">
+      </div>
+    </section>
+    <div>
+      <h1>Bientôt disponible !</h1>
+      <p>Besoin de conseils médicaux de votre médecin sans prendre
+        rendez-vous ? <strong> Avec DoctoAsk, l'assistant de votre medecin vous accompagne partout !</strong></p>
+    </div>
+    <form class="form" action="index.html" method="post">
+      <div>
+        <input class="typeclient" id="client" type="radio" name="typeclient" value="0" checked>
+        <p>je suis un patient</p>
+        <input class="typeclient" type="radio" name="typeclient" value="1">
+        <p>je suis un médecin</p>
+      </div>
+
+      <div class="mail">
+        <input id="mail" type="email" name="mail" placeholder="Adresse mail..." required>
+        <input type="submit" name="submit" id="submit" value="M'abonner">
+      </div>
+      <p id="engagement">Nous nous engageons à ne vous faire part que des informations relatives
+        à la promotion des avancées de DoctoAsk.</p>
+    </form>
+
+    <div id="resultat">
+      <!-- afficher du retour ajax -->
+    </div>
+
+    <section class="social">
+
+      <div class="facebook">
+        <a href="https://www.facebook.com/doctoask/">
+          <img src="src/img/social/fb_deg.png" alt="Logo facebook">
+        </a>
+      </div>
+      <div class="twitter">
+        <a href="https://twitter.com/DoctoAsK_Fr">
+          <img src="src/img/social/twitter_deg.png" alt="Logo Twitter">
+        </a>
+      </div>
+      <div class="linkedin">
+        <a href="https://www.linkedin.com/company/doctoask/">
+          <img src="src/img/social/linkedin_deg.png" alt="Logo Twitter">
+        </a>
+      </div>
+    </section>
+
+    <section class="logo_univ">
+      <div>
+        <img src="src/img/universite_bordeaux_web.png" alt="">
+      </div>
+      <p>Ce site est réalisé dans le cadre d'un projet universitaire.</p>
+    </section>
+
+  </section>
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+
+  <script type="text/javascript">
+    $(window).load(function() {
+      $(".loader").fadeOut("1000");
+    })
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#submit").click(function(e) {
+        e.preventDefault();
+        $.post(
+          'php/newsletter.php', // Un script PHP que l'on va créer juste après
+          {
+            mail: $("#mail").val(),
+            type: $('input[name=typeclient]:checked').val() // Nous récupérons la valeur de nos input que l'on fait passer à connexion.php
+          },
+          function(data) {
+            console.log(data);
+            if (data == 'success') {
+              $("#resultat").append("<div class=\"alert success\"><span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span><strong>Merci pour votre inscription !</strong></div>");
+              $("#mail").val("");
+            }
+
+            if (data == 'bad-format') {
+              $("#resultat").append("<div class=\"alert badFormat\"><span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span><strong>Votre adresse mail est invalide !</strong></div>");
+              $("#mail").val("");
+            }
+            if (data == 'non-valide') {
+              $("#resultat").append("<div class=\"alert badFormat\"><span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span><strong>Veuillez rentrer une adress mail !</strong></div>");
+              $("#mail").val("");
+            }
+            // $("#resultat").append("<p>"+data+"</p>");
+
+          },
+          'text'
+        );
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('help/css/style.css')}}" type="text/css">
+{% endblock %}
+
+{% block body %}
+<section class="contenu text-center">
+   <h1 class="pt-5"> <b>BESOIN D'AIDE ?</b></h1>
+    <!--Problèmes-->
+    <div class="container">
+        <div class="problems justify-content-center row">
+            <a href="{{path('nouveaute')}}" title="Nouveauté"><div>Nouveauté</div></a>
+            <a href="{{path('help_chat')}}" title="Chatbot"><div>Chatbot</div></a>
+            <a href="{{path('securite')}}" title="Sécurité"><div>Sécurité</div></a>
+            <a href="{{path('faq')}}" title="FAQ"><div>FAQ</div></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

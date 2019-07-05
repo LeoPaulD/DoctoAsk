@@ -1,0 +1,112 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('configchatbot/css/style.css')}}" type="text/css">
+{% endblock %}
+{% block body %}
+<section class="contenu">
+<div class="container" id="listeQuestion">
+  
+    <div class="row">    
+      <h1 class="m-3 text-centerr">Configuration de votre chatbot &nbsp!</h1>
+      <p class="mt-3">Cette page vous permet de configurer votre chatbot en y ajoutant, modifiant ou supprimer vos porpre question.</p>
+    </div>
+    {% if maxQuestion != true %}
+    <div class="row card-input">
+      <div class="card col-12 m-3 p-0" id="card-ajout">
+        <div class="card-header">Ajouter une question</div>
+        <div class="card-body">
+          <input type="text" id="ajoutQuestion" class="form-control mb-2" name="" placeholder="Votre question">
+          <input type="text" id="ajoutReponse" class="form-control mb-2" name="" placeholder="Votre reponse">
+          <button type="button" name="button" class="bg-sub ajout" >Ajouter la question</button>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% set cmpt = 0 %}
+    {% for question in questions %}
+      {% set cmpt = cmpt + 1 %}
+      <div class="row">
+        <div class="card col-12 m-3 p-0">
+          <div class="card-header">
+            Question n° {{cmpt}}
+          </div>
+          <div class="card-body">
+            <label for="question">Question</label>
+            <input type="text" class="form-control mb-2" id="question_{{question.id}}" name="question" value="{{question.contenu}}">
+            {% for reponse in reponses %}
+              {% if question.id == reponse.idQuestion %}
+                <label for="reponse">réponse</label>
+                <input type="text" class="form-control mb-2" id="reponse_{{question.id}}" name="name" value="{{reponse.contenu}}">
+              {% endif %}
+            {% endfor %}
+            <button type="button" name="button" class="modifier btn btn-warning text-uppercase" id="{{question.id}}">Modifer</button>
+            <button type="button" name="button" class="supprimer btn btn-danger text-uppercase" id="{{question.id}}">Supprimer</button>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}
+
+{% block javascript%}
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="{{ asset('chatbot/js/monscript.js') }}"></script>
+<script>
+      $(document).ready( function() {
+
+        //click boutton ajout d'un nouvelles question
+        $("#listeQuestion").on("click",".ajout",function(){
+          //$("#bntAjout").prop("disabled", true);
+          console.log("ajout");
+          question = $('#ajoutQuestion').val();
+          reponse = $('#ajoutReponse').val();
+          
+          $.ajax({
+            type: 'POST',
+            url: "{{ path('ajout', {'id':id}) }}",
+            data: 'question=' + question + '&reponse=' + reponse,
+            success: function (data) {
+              $('#listeQuestion').load('{{ path('configchatbot', {'id':id}) }} .row')
+              //$("#bntAjout").prop("disabled", false);
+              console.log(data);
+            }
+          });
+        });
+
+        //click boutton modifier question
+         $("#listeQuestion").on("click",".modifier",function(){
+          idBtn= this.id;
+          console.log("modifier");
+          question = $('#question_'+idBtn).val();
+          reponse = $('#reponse_'+idBtn).val();
+          $.ajax({
+            type: 'POST',
+            url: "{{ path('modifier', {'id':id}) }}",
+            data: 'idQuestion='+ idBtn +'&question=' + question + '&reponse=' + reponse,
+            success: function (data) {
+              $('#listeQuestion').load('{{ path('configchatbot', {'id':id}) }} .row')
+            }
+          });
+        });
+
+        //click boutton supprimer la question
+        
+        $("#listeQuestion").on("click",".supprimer", function(){
+          idBtn= this.id;
+          console.log("suppr");
+          $.ajax({
+            type: 'POST',
+            url: "{{ path('supprimer', {'id':id}) }}",
+            data: 'idQuestion='+ idBtn,
+            success: function (data) {
+              $('#listeQuestion').load('{{ path('configchatbot', {'id':id}) }} .row')
+            }
+          });
+        });
+
+
+      });
+</script>        
+{% endblock %}

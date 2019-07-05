@@ -1,0 +1,10 @@
+#card-ajout>.card-body
+{
+  background-color:#ecf0f1;
+}
+.card-header
+{
+  background: linear-gradient(to right,#651FFF, #2962ff);
+  color: white;
+}
+	
